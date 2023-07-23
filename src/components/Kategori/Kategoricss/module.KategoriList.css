@@ -1,0 +1,8 @@
+.Kategori{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid #e6e6e6;
+    width: 100%;
+}
