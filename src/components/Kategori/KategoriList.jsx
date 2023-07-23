@@ -32,7 +32,7 @@ export const KategoriList = ({ user }) => {
 
 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
 <Button variant="contained" onClick={handleKategori}>
-  {results.isLoading ? <CircularProgress variant="indeterminate" color='success' /> : "Album Ekle"}
+  {results.isLoading ? <CircularProgress variant="indeterminate" color='success' /> : "Kategori Ekle"}
 </Button>
 </div>
 <div>

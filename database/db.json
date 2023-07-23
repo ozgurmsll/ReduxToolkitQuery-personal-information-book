@@ -6,6 +6,10 @@
     }
   ],
   "kategori": [
-    
+    {
+      "title": "asd",
+      "userId": 2,
+      "id": 1
+    }
   ]
 }
