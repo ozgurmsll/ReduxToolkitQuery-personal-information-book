@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsChevronLeft, BsChevronDown } from 'react-icons/bs'
-import style from './module.Panel.css'
+import style from './module.Panel.css';
 export const ExpandablePanel = ({ header, children }) => {
     const [isExpanded, setIsExpanded] = React.useState(true)
     const handleClick = () => {
@@ -16,7 +16,7 @@ export const ExpandablePanel = ({ header, children }) => {
                 </div>
                 <div onClick={handleClick} > 
                     {isExpanded ? <BsChevronDown /> : <BsChevronLeft />}
-
+        
                 </div>
             </div>
             {isExpanded && <div className='usersMenü'>{children}</div>}
