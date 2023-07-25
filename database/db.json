@@ -19,13 +19,24 @@
   "adress": [
     {
       "kategoriId": 1,
-      "title": "xx",
-      "id": 5
+      "sokak": "a",
+      "sehir": "bc",
+      "ülke": "c",
+      "id": 1
     },
     {
       "kategoriId": 1,
-      "title": "xx",
-      "id": 6
+      "sokak": "a",
+      "sehir": "bc",
+      "ülke": "c",
+      "id": 2
+    },
+    {
+      "kategoriId": 1,
+      "sokak": "a",
+      "sehir": "d",
+      "ülke": "e",
+      "id": 3
     }
   ]
 }

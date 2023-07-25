@@ -37,13 +37,15 @@ const adressApi = createApi({
                 invalidatesTags: (result, error, { kategori }) => {
                     return [{ type: 'KategoriAdress', id: kategori.id }]
                 },
-                query: ( kategori ) => { 
+                query: ({ kategori, street, city, country}) => { 
                     return {
                         url: '/adress',
                         method: 'POST',
                         body: {
                             kategoriId: kategori.id,
-                            title: "xx"
+                            sokak:street,
+                            sehir:city,
+                            ülke:country
                         }
                     }
                 },

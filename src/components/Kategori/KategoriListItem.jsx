@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { BsChevronDown, BsChevronLeft } from 'react-icons/bs';
 import { Album } from './Kategoriler/Album';
-import { Adress } from './Kategoriler/Adress';
-
+import { Adress } from './Kategoriler/Adres/addAdres';
 export const KategoriListItem = ({ kategori }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
