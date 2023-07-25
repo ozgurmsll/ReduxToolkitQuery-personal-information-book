@@ -10,13 +10,13 @@ export const KategoriListItem = ({ kategori }) => {
   };
 
   return (
-    <div>
+    <div style={{width:'100%'}}>
       <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={toggleExpansion}>
         {kategori.title}
         {isExpanded ? <BsChevronDown /> : <BsChevronLeft />}
       </div>
       {isExpanded && (
-        <div>
+        <div style={{width:'100%'}}>
           {kategori.title === 'Album Kategorisi' && <Album kategori={kategori}/>}
           {kategori.title === 'Adress Kategorisi' && <Adress  kategori={kategori} />}
         </div>

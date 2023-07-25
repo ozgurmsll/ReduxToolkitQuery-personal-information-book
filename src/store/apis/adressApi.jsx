@@ -23,21 +23,25 @@ const adressApi = createApi({
                     return tags;
                 },
 
-                query: (kategori) => {
+                query: (kategoriId) => {
                     return {
                         url: '/adress',
                         method: 'GET',
                         params: {
-                            id: kategori.id
+                            kategoriId: kategoriId.id,
+
+
                         }
                     }
                 },
             }),
             addAdress: builder.mutation({
                 invalidatesTags: (result, error, { kategori }) => {
-                    return [{ type: 'KategoriAdress', id: kategori.id }]
+                    return [
+                        { type: 'KategoriAdress', id: kategori.id },
+                    ]
                 },
-                query: ({ kategori, street, city, country}) => { 
+                query: ({ kategori, street, city, country,adresName}) => { 
                     return {
                         url: '/adress',
                         method: 'POST',
@@ -45,17 +49,19 @@ const adressApi = createApi({
                             kategoriId: kategori.id,
                             sokak:street,
                             sehir:city,
-                            ülke:country
+                            ülke:country,
+                            name:adresName
                         }
                     }
                 },
             }),
             
+            
             removeAdress: builder.mutation({
                 invalidatesTags: (result, error, adress) => {
                     return [{ type: 'adress', id: adress.id }]
                 },
-                query: (album) => {
+                query: (adress) => { // Burada album yerine adress yazın
                     return {
                         url: `/adress/${adress.id}`,
                         method: 'DELETE',
@@ -75,4 +81,3 @@ export const {
 
 } = adressApi;
 export { adressApi };
-

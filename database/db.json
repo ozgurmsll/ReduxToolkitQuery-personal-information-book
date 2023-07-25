@@ -19,24 +19,19 @@
   "adress": [
     {
       "kategoriId": 1,
-      "sokak": "a",
-      "sehir": "bc",
-      "ülke": "c",
+      "sokak": "körfez",
+      "sehir": "Samsun",
+      "ülke": "Türkiye",
+      "name": "Ev",
       "id": 1
     },
     {
       "kategoriId": 1,
-      "sokak": "a",
-      "sehir": "bc",
-      "ülke": "c",
+      "sokak": "Yenimah.",
+      "sehir": "Samsun",
+      "ülke": "Türkiye",
+      "name": "İş",
       "id": 2
-    },
-    {
-      "kategoriId": 1,
-      "sokak": "a",
-      "sehir": "d",
-      "ülke": "e",
-      "id": 3
     }
   ]
 }

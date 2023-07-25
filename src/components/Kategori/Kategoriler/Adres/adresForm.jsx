@@ -1,4 +1,4 @@
-export const AdressForm = ({ street, city, country, setAddress }) => {
+export const AdressForm = ({ street, city, country, setAddress ,adresName}) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
   
@@ -13,6 +13,10 @@ export const AdressForm = ({ street, city, country, setAddress }) => {
 
   return (
     <form>
+       <div>
+        <label htmlFor="street">Name</label>
+        <input type="text" id="street" name="adresName" value={adresName} onChange={handleChange} />
+      </div>
       <div>
         <label htmlFor="street">Street:</label>
         <input type="text" id="street" name="street" value={street} onChange={handleChange} />

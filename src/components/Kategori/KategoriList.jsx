@@ -64,7 +64,7 @@ export const KategoriList = ({ user }) => {
           {results.isLoading ? <CircularProgress variant="indeterminate" color="success" /> : 'Kategori Ekle'}
         </Button>
       </div>
-      <div>{content}</div>
+      <div style={{width:'100%'}}>{content}</div>
     </>
   );
 };
