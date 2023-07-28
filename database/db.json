@@ -1,19 +1,24 @@
 {
   "users": [
     {
-      "name": "deneme1",
-      "id": 1
-    },
-    {
       "name": "özgür",
       "id": 2
+    },
+    {
+      "name": "batu",
+      "id": 3
     }
   ],
   "kategori": [
     {
       "title": "Adress Kategorisi",
-      "userId": 1,
+      "userId": 2,
       "id": 1
+    },
+    {
+      "title": "Album Kategorisi",
+      "userId": 2,
+      "id": 2
     }
   ],
   "adress": [
@@ -27,11 +32,18 @@
     },
     {
       "kategoriId": 1,
-      "sokak": "Yenimah.",
-      "sehir": "Samsun",
-      "ülke": "Türkiye",
-      "name": "İş",
+      "sokak": "2",
+      "sehir": "2",
+      "ülke": "2",
+      "name": "2",
       "id": 2
+    }
+  ],
+  "AlbumKategori": [
+    {
+      "kategoriId": 2,
+      "name": "2",
+      "id": 1
     }
   ]
 }

@@ -7,6 +7,7 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { usersApis } from "./apis/usersApi";
 import { kategoriApi } from "./apis/kategoriApi";
 import { adressApi } from "./apis/adressApi";
+import { AlbumKategoriApis } from "./apis/AlbumKategori";
 // Redux store'u yapılandırıyoruz ve export ediyoruz.
 export const store = configureStore({
     // Reducerları belirliyoruz. Burada usersApis.reducerPath ile usersApis modülündeki reducer'ı ekliyoruz.
@@ -14,13 +15,14 @@ export const store = configureStore({
         [usersApis.reducerPath]: usersApis.reducer,
         [kategoriApi.reducerPath]: kategoriApi.reducer,
         [adressApi.reducerPath]: adressApi.reducer,
+        [AlbumKategoriApis.reducerPath]: AlbumKategoriApis.reducer,
     },
     // Middleware'leri yapılandırıyoruz.
     middleware: (getDefaultMiddleware) => {
         // Redux Toolkit'ın varsayılan middleware'lerini alıyoruz.
         const defaultMiddleware = getDefaultMiddleware();
         // Sonra usersApis modülündeki middleware'i bu listeye ekliyoruz.
-        return defaultMiddleware.concat(usersApis.middleware).concat(kategoriApi.middleware).concat(adressApi.middleware);
+        return defaultMiddleware.concat(usersApis.middleware).concat(kategoriApi.middleware).concat(adressApi.middleware).concat(AlbumKategoriApis.middleware);
     },
 });
 
@@ -42,3 +44,9 @@ export {
     useGetAdressQuery,
     useRemoveAdressMutation,
 } from "./apis/adressApi";
+export {
+    useGetAlbumsQuery
+    ,useAddAlbumMutation
+    ,useRemoveAlbumMutation
+} from "./apis/AlbumKategori";
+
