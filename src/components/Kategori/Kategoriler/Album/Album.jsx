@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Checkbox } from '@mui/material';
 import { Button, CircularProgress } from '@mui/material';
-import { useAddAlbumMutation ,useGetAlbumsQuery} from '../../../../store/apis/AlbumKategori';
+import { useAddAlbumMutation ,useGetAlbumsQuery} from '../../../../store';
 import { AlbumListItem } from './AlbumListItem';
 import style from "./AlbumCss/module.Album.css";
 export const Album = ({kategori,album}) => {

@@ -7,8 +7,8 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { usersApis } from "./apis/usersApi";
 import { kategoriApi } from "./apis/kategoriApi";
 import { adressApi } from "./apis/adressApi";
-import { AlbumKategoriApis } from "./apis/AlbumKategori";
-import { albumFoto } from "./apis/AlbumFoto";
+import { AlbumKategoriApis } from "./apis/AlbumApi/AlbumKategori";
+import { albumFoto } from "./apis/AlbumApi/AlbumFoto";
 // Redux store'u yapılandırıyoruz ve export ediyoruz.
 export const store = configureStore({
     // Reducerları belirliyoruz. Burada usersApis.reducerPath ile usersApis modülündeki reducer'ı ekliyoruz.
@@ -51,11 +51,11 @@ export {
     useGetAlbumsQuery
     ,useAddAlbumMutation
     ,useRemoveAlbumMutation
-} from "./apis/AlbumKategori";
+} from "./apis/AlbumApi/AlbumKategori";
 
 export {
     useGetFotoQuery,
     useAddFotoMutation,
 
     useRemoveFotoMutation,
-} from "./apis/AlbumFoto";
+} from "./apis/AlbumApi/AlbumFoto";
