@@ -8,6 +8,7 @@ import { usersApis } from "./apis/usersApi";
 import { kategoriApi } from "./apis/kategoriApi";
 import { adressApi } from "./apis/adressApi";
 import { AlbumKategoriApis } from "./apis/AlbumKategori";
+import { albumFoto } from "./apis/AlbumFoto";
 // Redux store'u yapılandırıyoruz ve export ediyoruz.
 export const store = configureStore({
     // Reducerları belirliyoruz. Burada usersApis.reducerPath ile usersApis modülündeki reducer'ı ekliyoruz.
@@ -16,13 +17,15 @@ export const store = configureStore({
         [kategoriApi.reducerPath]: kategoriApi.reducer,
         [adressApi.reducerPath]: adressApi.reducer,
         [AlbumKategoriApis.reducerPath]: AlbumKategoriApis.reducer,
+        [albumFoto.reducerPath]: albumFoto.reducer,
+
     },
     // Middleware'leri yapılandırıyoruz.
     middleware: (getDefaultMiddleware) => {
         // Redux Toolkit'ın varsayılan middleware'lerini alıyoruz.
         const defaultMiddleware = getDefaultMiddleware();
         // Sonra usersApis modülündeki middleware'i bu listeye ekliyoruz.
-        return defaultMiddleware.concat(usersApis.middleware).concat(kategoriApi.middleware).concat(adressApi.middleware).concat(AlbumKategoriApis.middleware);
+        return defaultMiddleware.concat(usersApis.middleware).concat(kategoriApi.middleware).concat(adressApi.middleware).concat(AlbumKategoriApis.middleware).concat(albumFoto.middleware);
     },
 });
 
@@ -50,3 +53,9 @@ export {
     ,useRemoveAlbumMutation
 } from "./apis/AlbumKategori";
 
+export {
+    useGetFotoQuery,
+    useAddFotoMutation,
+
+    useRemoveFotoMutation,
+} from "./apis/AlbumFoto";

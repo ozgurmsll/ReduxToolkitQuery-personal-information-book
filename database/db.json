@@ -39,5 +39,29 @@
       "id": 2
     }
   ],
-  "AlbumKategori": []
+  "AlbumKategori": [
+    {
+      "kategoriId": 2,
+      "name": "foto",
+      "id": 1
+    },
+    {
+      "kategoriId": 2,
+      "name": "foto2",
+      "id": 2
+    }
+  ],
+  "AlbumFoto":[
+    {
+      "albumKategoriId": 1,
+      "name": "foto3",
+      "id": 1
+    },
+    {
+      "albumKategoriId": 2,
+      "name": "foto2",
+      "id": 2
+    }
+   
+  ]
 }

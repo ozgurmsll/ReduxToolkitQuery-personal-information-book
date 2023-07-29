@@ -3,7 +3,7 @@ import { Checkbox } from '@mui/material';
 import { Button, CircularProgress } from '@mui/material';
 import { useAddAlbumMutation ,useGetAlbumsQuery} from '../../../../store/apis/AlbumKategori';
 import { AlbumListItem } from './AlbumListItem';
-
+import style from "./AlbumCss/module.Album.css";
 export const Album = ({kategori,album}) => {
   const [album2, setAlbum] = useState('');
   const [addAlbum, results] = useAddAlbumMutation();
@@ -11,6 +11,7 @@ export const Album = ({kategori,album}) => {
 
   const handleAlbumEkle = () => {
     addAlbum({ kategori, name:album2 });
+    setAlbum('');
   };
  
   let AlbumList;
@@ -24,21 +25,23 @@ export const Album = ({kategori,album}) => {
     });
   }
   return (
-    <div>
+    <div className='anaDiv'>
       <div>
-    <label htmlFor="">Album Adı Giriniz</label>
-      <input type="text"  value={album2} onChange={(e)=>setAlbum(e.target.value)} />
-      </div>
-      <Button variant="contained" onClick={handleAlbumEkle}>
-          {results.isLoading ? <CircularProgress variant="indeterminate" color="success" /> : 'Album Ekle'}
-        </Button>
-        <div>
           Album Listesi
           <hr />
           <div>
             {AlbumList}
           </div>
         </div>
+      <div className='AddAlbum'>
+       <label htmlFor="">Album Adı Giriniz</label>
+      <input type="text"  value={album2} onChange={(e)=>setAlbum(e.target.value)} />
+      <Button variant="contained" onClick={handleAlbumEkle}>
+          {results.isLoading ? <CircularProgress variant="indeterminate" color="success" /> : 'Album Ekle'}
+        </Button>
+      </div>
+      
+        
     </div>
   );
 };
