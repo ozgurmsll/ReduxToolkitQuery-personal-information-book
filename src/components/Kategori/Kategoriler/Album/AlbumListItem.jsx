@@ -1,26 +1,26 @@
 import React from 'react'
 import { Button, CircularProgress } from '@mui/material';
-import{useGetAlbumsQuery} from '../../../../store/apis/AlbumKategori'
+import { useGetAlbumsQuery } from '../../../../store'
+import { useRemoveAlbumMutation } from '../../../../store';
+import { BsFillTrashFill } from 'react-icons/bs'
 
-export const AlbumListItem = ({kategori}) => {
-    const { data, isFetching, isError } = useGetAlbumsQuery(kategori);
+export const AlbumListItem = ({ kategori ,album}) => {
+  const [removeAlbum, results] = useRemoveAlbumMutation();
 
-    let AlbumContent;
-    if (isFetching) {
-      AlbumContent = <CircularProgress />;
-    } else if (isError) {
-      AlbumContent = <div>Something went wrong</div>;
-    } else if (data) {
-      AlbumContent = data.map((album) => {
-        return <div key={album.id}>{album.name}</div>;
+  const handleDelete = () => {
+    removeAlbum(album);
+    console.log(album.name);
+  }
 
 
-      });
-    }
   return (
     <div>
-        
-        {AlbumContent}
+      <button type="button" onClick={handleDelete} style={{ background: "none", border: 'none', cursor: 'pointer' }}>
+        {results.isLoading ? <CircularProgress variant="determinate" color='success' /> : <BsFillTrashFill />}
+      </button>
+      <div >
+        {album.name}
+      </div>
     </div>
   )
 }

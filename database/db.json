@@ -39,11 +39,5 @@
       "id": 2
     }
   ],
-  "AlbumKategori": [
-    {
-      "kategoriId": 2,
-      "name": "2",
-      "id": 1
-    }
-  ]
+  "AlbumKategori": []
 }

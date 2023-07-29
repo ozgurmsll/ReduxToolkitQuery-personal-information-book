@@ -56,12 +56,12 @@ const AlbumKategoriApis = createApi({
             
             
             removeAlbum: builder.mutation({
-                invalidatesTags: (result, error, Albums) => {
-                    return [{ type: 'Albums', id: Albums.id }]
+                invalidatesTags: (result, error, albums) => {
+                    return [{ type: 'AlbumKategori', id: albums.id }]
                 },
-                query: (Albums) => { // 
+                query: (album) => { 
                     return {
-                        url: `/AlbumKategori/${Albums.id}`,
+                        url: `/AlbumKategori/${album.id}`,
                         method: 'DELETE',
 
                     }
