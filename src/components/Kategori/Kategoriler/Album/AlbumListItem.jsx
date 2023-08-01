@@ -8,14 +8,13 @@ import { BsFillTrashFill } from 'react-icons/bs'
 import { AlbumFotoList } from './AlbumFoto/AlbumFotoList';
 export const AlbumListItem = ({ kategori ,album}) => {
   const [removeAlbum, results] = useRemoveAlbumMutation();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const handleDelete = () => {
     removeAlbum(album);
     console.log(album.name);
   }
   const toggleExpansion = () => {
-    setIsExpanded(!isExpanded);
   };
 
   return (

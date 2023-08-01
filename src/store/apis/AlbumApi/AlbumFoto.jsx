@@ -35,19 +35,19 @@ const albumFoto = createApi({
             }),
             addFoto: builder.mutation({
                 invalidatesTags: (result, error, { user }) => {
-                  return [{ type: 'UsersKategori', id: user.id }]
+                  return [{ type: 'UsersKategori', id: user.id }];
                 },
-                query: ({ title, user }) => {
+                query: (selectedFoto) => {
                   return {
                     url: '/AlbumFoto',
                     method: 'POST',
                     body: {
-                      title: title,
-                      userId: user.id
-                    }
-                  }
+                      foto: selectedFoto,
+                    },
+                  };
                 },
               }),
+              
             removeFoto: builder.mutation({
                 invalidatesTags: (result, error, album) => {
                     return [{ type: 'album', id: album.id }]

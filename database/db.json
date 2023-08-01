@@ -3,10 +3,6 @@
     {
       "name": "özgür",
       "id": 2
-    },
-    {
-      "name": "batu",
-      "id": 3
     }
   ],
   "kategori": [
@@ -29,14 +25,6 @@
       "ülke": "Türkiye",
       "name": "Ev",
       "id": 1
-    },
-    {
-      "kategoriId": 1,
-      "sokak": "2",
-      "sehir": "2",
-      "ülke": "2",
-      "name": "2",
-      "id": 2
     }
   ],
   "AlbumKategori": [
@@ -51,7 +39,7 @@
       "id": 2
     }
   ],
-  "AlbumFoto":[
+  "AlbumFoto": [
     {
       "albumKategoriId": 1,
       "name": "foto3",
@@ -61,7 +49,16 @@
       "albumKategoriId": 2,
       "name": "foto2",
       "id": 2
+    },
+    {
+      "foto": {},
+      "id": 3
+    },
+    {
+      "foto": {
+        "foto": {}
+      },
+      "id": 4
     }
-   
   ]
 }
